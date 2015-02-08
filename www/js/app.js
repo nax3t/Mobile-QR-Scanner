@@ -18,13 +18,12 @@ qRScan.run(function($ionicPlatform) {
   });
 })
 
-qRScan.controller("ExampleController", function($scope, $cordovaBarcodeScanner) {
+qRScan.controller("qrCtrl", function($scope, $cordovaBarcodeScanner) {
  
     $scope.scanBarcode = function() {
         $cordovaBarcodeScanner.scan().then(function(imageData) {
-            alert(imageData.text);
-            console.log("Barcode Format -> " + imageData.format);
-            console.log("Cancelled -> " + imageData.cancelled);
+            alert('Logging you in!');
+            window.open(imageData.text, '_blank', 'location=yes')
         }, function(error) {
             console.log("An error happened -> " + error);
         });
