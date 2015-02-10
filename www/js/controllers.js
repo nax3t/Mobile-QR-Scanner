@@ -1,19 +1,10 @@
+'use strict';
+
 angular.module('myControllers', [])
 
-.controller('AttendeesCtrl', ['$scope', function($scope) {
-	$scope.attendees = [{
-		first: 'Dana',
-		last: 'Grissom'
-  },
-  {
-    first: 'Ben',
-    last: 'Manning'
-  },
-  {
-    first: 'Ian',
-    last: 'Schoonover'
-  }];
-}])
+.controller('AttendeesCtrl', function($scope, $location, Attendee) {
+  $scope.attendees = Attendee.query();
+})
 
 .controller("qrCtrl", function($scope, $cordovaBarcodeScanner, $location) {
  
