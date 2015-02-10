@@ -1,4 +1,4 @@
-angular.module('myControllers', ['ja.qr'])
+angular.module('myControllers', [])
 
 .controller('AttendeesCtrl', ['$scope', function($scope) {
 	$scope.attendees = [{
