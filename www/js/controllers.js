@@ -15,12 +15,11 @@ angular.module('myControllers', [])
   }];
 }])
 
-.controller("qrCtrl", function($scope, $cordovaBarcodeScanner) {
+.controller("qrCtrl", function($scope, $cordovaBarcodeScanner, $location) {
  
     $scope.scanBarcode = function() {
         $cordovaBarcodeScanner.scan().then(function(imageData) {
-            alert('Logging you in!');
-            window.open(imageData.text, '_blank', 'location=yes')
+            $location.path('#/');
         }, function(error) {
             console.log("An error happened -> " + error);
         });

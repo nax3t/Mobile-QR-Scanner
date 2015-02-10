@@ -6,6 +6,7 @@
     <title></title>
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
@@ -22,17 +23,17 @@
     <script src='js/controllers.js'></script>
   </head>
   <body ng-app="starter">
+    <!-- Yield to templates -->
+    <ion-nav-view></ion-nav-view>
 
-    <ion-pane>
-      <ion-header-bar class="bar-stable">
-        <h1 class="title">Ionic Blank Starter</h1>
-      </ion-header-bar>
-      <ion-content ng-controller="qrCtrl">
-        <button class="button" ng-click="scanBarcode()">Scan</button>
-        <qr text="qrcodeString"></qr>
-        <qr text="string"></qr>
-        <qr type-number="8" correction-level="'M'" size="200" input-mode="'ALPHA_NUM'" text="string" image="true"></qr>
-      </ion-content>
-    </ion-pane>
+    <!-- Nav bar -->
+    <ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-controller="qrCtrl"> 
+      <ion-tab title="Attendees" icon-off="ion-ios-people" icon-on="ion-ios-people" href="#/attendees">
+      <ion-nav-view name="attendees"></ion-nav-view>
+      </ion-tab>
+      <ion-tab title="Scan" icon-off="ion-ios-barcode-outline" icon-on="ion-ios-barcode" ng-click="scanBarcode()">
+      </ion-tab>
+    </ion-tabs>
+
   </body>
 </html>
