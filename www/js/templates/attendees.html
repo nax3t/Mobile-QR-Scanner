@@ -1,0 +1,11 @@
+<ion-view title="Attendees">  
+  <ion-content>
+    <ion-list>
+      <ion-item class="card" ng-repeat="attendee in attendees">
+        <div class="item item-text-wrap">
+          {{ attendee.first }} {{ attendee.last }}
+        </div>
+      </ion-item>
+    </ion-list>
+  </ion-content>     
+</ion-view>

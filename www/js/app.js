@@ -3,9 +3,9 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var qRScan = angular.module('starter', ['ionic', 'ngCordova', 'ja.qr']);
+angular.module('starter', ['ionic', 'ngCordova', 'ja.qr', 'myControllers']);
 
-qRScan.run(function($ionicPlatform) {
+.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -18,15 +18,15 @@ qRScan.run(function($ionicPlatform) {
   });
 })
 
-qRScan.controller("qrCtrl", function($scope, $cordovaBarcodeScanner) {
- 
-    $scope.scanBarcode = function() {
-        $cordovaBarcodeScanner.scan().then(function(imageData) {
-            alert('Logging you in!');
-            window.open(imageData.text, '_blank', 'location=yes')
-        }, function(error) {
-            console.log("An error happened -> " + error);
-        });
-    };
- 
+.config(function($stateProvider, $urlRouterProvider) {
+
+  //Feed route
+  $stateProvider.state('attendees', {
+    url: '/attendees',
+    templateUrl: 'templates/attendees.html',
+    controller: 'AttendeesCtrl'
+  });
+
+  //Catch-all route
+  $urlRouterProvider.otherwise('/attendees');
 });
