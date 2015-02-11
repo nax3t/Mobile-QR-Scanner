@@ -25,6 +25,7 @@ angular.module('myControllers', [])
       $cordovaBarcodeScanner.scan().then(function(imageData) {
           Attendee.create({ attendee: {first: 'Ian', last: 'Schoonover'} }, function() {
 						$location.path('/attendees');
+						alert(imageData.);
 		});
       }, function(error) {
           console.log("An error happened -> " + error);
