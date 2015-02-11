@@ -23,9 +23,8 @@ angular.module('myControllers', [])
 .controller("qrCtrl", function($scope, $cordovaBarcodeScanner, $location, Attendee) {
   $scope.create = function() {
       $cordovaBarcodeScanner.scan().then(function(imageData) {
-          Attendee.create({ attendee: {first: 'Ian', last: 'Schoonover'} }, function() {
+          Attendee.create({ attendee: { first: imageData.text } }, function() {
 						$location.path('/attendees');
-						alert(imageData.);
 		});
       }, function(error) {
           console.log("An error happened -> " + error);
