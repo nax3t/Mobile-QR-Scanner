@@ -20,13 +20,18 @@ app.run(function($ionicPlatform) {
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
-  //Feed route
-  $stateProvider.state('attendees', {
+  $stateProvider
+  .state('welcome', {
+    url: '/',
+    templateUrl: 'templates/welcome.html',
+    controller: 'WelcomeCtrl'
+  })
+  .state('attendees', {
     url: '/attendees',
     templateUrl: 'templates/attendees.html',
     controller: 'AttendeesCtrl'
   });
 
   //Catch-all route
-  $urlRouterProvider.otherwise('/attendees');
+  $urlRouterProvider.otherwise('/');
 })

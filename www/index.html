@@ -30,10 +30,13 @@
 
     <!-- Nav bar -->
     <ion-tabs class="tabs-icon-top tabs-color-active-positive" ng-controller="qrCtrl"> 
+      <ion-tab title="Home" icon-off="ion-android-home" icon-on="ion-android-home" href="#/">
+      <ion-nav-view name="attendees"></ion-nav-view>
+      </ion-tab>
       <ion-tab title="Attendees" icon-off="ion-ios-people" icon-on="ion-ios-people" href="#/attendees">
       <ion-nav-view name="attendees"></ion-nav-view>
       </ion-tab>
-      <ion-tab title="Scan" icon-off="ion-ios-barcode-outline" icon-on="ion-ios-barcode" ng-click="scanBarcode()">
+      <ion-tab title="Scan" icon-off="ion-ios-barcode-outline" icon-on="ion-ios-barcode" ng-click="create()">
       </ion-tab>
     </ion-tabs>
 
