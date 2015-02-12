@@ -30,6 +30,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
     url: '/attendees',
     templateUrl: 'templates/attendees.html',
     controller: 'AttendeesCtrl'
+  })
+  .state('signin', {
+    url: '/sign_in',
+    templateUrl: 'templates/user_sessions/new.html',
+    controller: 'UserSessionsCtrl'
   });
 
   //Catch-all route

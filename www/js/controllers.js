@@ -10,15 +10,9 @@ angular.module('myControllers', [])
   $scope.attendees = Attendee.query();
 })
 
-.controller('NewTacoCtrl', function($scope, $location, Attendee) {
-	$scope.attendee = new Attendee();
-
-	$scope.create = function() {
-		Attendee.create({ attendee: $scope.attendee }, function() {
-			$location.path('#/attendees');
-		});
-	};
-})
+.controller('UserSessionsCtrl', ['$scope', function($scope) {
+	
+}])
 
 .controller("qrCtrl", function($scope, $cordovaBarcodeScanner, $location, Attendee) {
   $scope.create = function() {
