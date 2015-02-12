@@ -16,7 +16,13 @@ app.run(function($ionicPlatform) {
       StatusBar.styleDefault();
     }
   });
-})
+});
+
+app.run(['$rootScope', '$location', function($rootScope, $location) {
+    $rootScope.$on('auth:login-success', function() {
+      $location.path('/');
+    });
+}]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
 
@@ -39,4 +45,4 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   //Catch-all route
   $urlRouterProvider.otherwise('/');
-})
+});

@@ -11,7 +11,9 @@ angular.module('myControllers', [])
 })
 
 .controller('UserSessionsCtrl', ['$scope', function($scope) {
-	
+		$scope.$on('auth:login-error', function(ev, reason) {
+			$scope.error = reason.errors[0];
+		});
 }])
 
 .controller("qrCtrl", function($scope, $cordovaBarcodeScanner, $location, Attendee) {
