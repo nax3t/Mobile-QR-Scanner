@@ -4,5 +4,7 @@
   </div>
   <ion-content class="has-header" ng-controller="WelcomeCtrl">
     <!-- The content of the page -->
+    <li ng-show="!user.id"><a ng-href="/sign_in">Sign in</a></li>
+    <li ng-show="user.id"><a ng-click="signOut()">Sign out</a></li>
   </ion-content>
 </ion-view>
