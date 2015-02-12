@@ -1,18 +1,18 @@
-<ion-view title="Login" hide-back-button="true">
+<ion-view title="Register" hide-back-button="true">
   <ion-content class="has-header">
     
     <div class="alert alert-danger" role="alert" ng-show="error">
       {{ error }}
     </div>
-    
-    <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
+
+    <form ng-submit="handleRegBtnClick()" role="form" ng-init="registrationForm = {}">
       <div class="list">
 
         <label class="item item-input">
           <input type="email"
             name="email"
             id="email"
-            ng-model="loginForm.email"
+            ng-model="registrationForm.email"
             placeholder="Email"
             required="required">
         </label>
@@ -20,12 +20,20 @@
           <input type="password"
             name="password"
             id="password"
-            ng-model="loginForm.password"
+            ng-model="registrationForm.password"
             placeholder="Password"
             required="required">
         </label>
+        <label class="item item-input">
+          <input type="password"
+            name="password_confirmation"
+            id="password_confirmation"
+            ng-model="registrationForm.password_confirmation"
+            placeholder="Password Confirmation"
+            required="required">
+        </label>
         <div>
-          <button class="button button-block button-positive" type="submit">Login</button>
+          <button class="button button-block button-positive" type="submit">Register</button>
         </div>
 
         <!-- Add this later:
