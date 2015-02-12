@@ -35,7 +35,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
   .state('attendees', {
     url: '/attendees',
     templateUrl: 'templates/attendees.html',
-    controller: 'AttendeesCtrl'
+    controller: 'AttendeesCtrl',
+    resolve: {
+      auth: ['$auth', function($auth) {
+        return $auth.validateUser();
+      }]
+    }
   })
   .state('signin', {
     url: '/sign_in',
